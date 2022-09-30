@@ -9,7 +9,7 @@
 {% block base %}
 <h1 class="text-center my-3">영화 리뷰</h1>
 <div class="container">
-  <a class="btn btn-outline-secondary mb-3" href="#" role="button">리뷰 작성</a>
+  <a class="btn btn-outline-secondary mb-3" href="{% url 'day6:create' %}" role="button">리뷰 작성</a>
 </div>
 <div class="container">
   <table class="table">
@@ -21,11 +21,13 @@
       </tr>
     </thead>
     <tbody>
+      {% for review in reviews %}
       <tr>
-        <th scope="row">1</th>
-        <td><a href="">Mark<a></td>
-        <td>Otto</td>
+        <th scope="row">{{ review.pk }}</th>
+        <td><a href="{% url 'day6:detail' review.pk %}">{{ review.title }}<a></td>
+        <td>{{ review.updated_at }}</td>
       </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>

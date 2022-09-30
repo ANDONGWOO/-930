@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block title %}<title>Create</title>{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block base %}
+<h1 class="my-3 text-center">수정하기</h1>
+<form action="{% url 'day6:editted' edit.pk %}" class="container">
+  <div class="mb-3">
+    <label for="review-title" class="form-label">리뷰 제목</label>
+    <input type="text" class="form-control" name="edit-title" value="{{ edit.title }}" id="review-title"
+      aria-describedby="emailHelp" required>
+  </div>
+  <div class="mb-3">
+    <label for="review-content" class="form-label">리뷰 내용</label>
+    <textarea class="form-control" name="edit-content" id="review-content" rows="3">{{ edit.content }}</textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">변경하기</button>
+  <a class="btn btn-danger" href="{% url 'day6:detail' edit.pk %}" role="button">변경 취소</a>
+</form>
+
+{% endblock %}

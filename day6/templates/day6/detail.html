@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% block title %}<title>Detail</title>{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block base %}
+<!-- <h1 class="text-center my-3">제목: {{ review.title }}</h1> -->
+
+<section class="d-flex justify-content-center">
+  <div class="card container m-5">
+    <div class="card-body">
+      <h1 class="text-center my-3">제목: {{ review.title }}</h1>
+      <a class="btn btn-outline-secondary btn-sm mb-3" href="{% url 'day6:index' %}" role="button">목록으로</a>
+      <h3 class="card-text mb-4">{{ review.content }}</h3>
+      <a class="btn btn-primary" href="{% url 'day6:edit' review.pk %}" role="button">리뷰 수정</a>
+      <a class="btn btn-danger" href="{% url 'day6:delete' review.pk %}" role="button">리뷰 삭제</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
