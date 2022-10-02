@@ -7,6 +7,7 @@ app_name = "day6"
 urlpatterns = [
     path("index/", views.index, name="index"),
     path("create/", views.create, name="create"),
+    #url만들기
     path("created/", views.created, name="created"),
     path("detail/<int:pk>/", views.detail, name="detail"),
     path("delete/<int:pk>/", views.delete, name="delete"),

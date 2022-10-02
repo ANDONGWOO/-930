@@ -15,6 +15,7 @@ def index(request):
 
 def create(request):
     return render(request, "day6/create.html")
+    # 함수 만들고
 
 
 def created(request):
@@ -55,5 +56,8 @@ def editted(request, pk):
     review.title = new_title
     review.content = new_content
     review.save()
-
     return redirect("day6:index")
+
+
+    
+           
